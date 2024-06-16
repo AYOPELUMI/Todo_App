@@ -5,9 +5,12 @@ class DialogWidget extends StatelessWidget {
   const DialogWidget({
     super.key,
     required this.onSave,
+    required this.controller,
     required this.onCancel});
 
-  final VoidCallback onSave, onCancel;
+  final VoidCallback onSave; 
+  final VoidCallback onCancel;
+  final TextEditingController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -18,6 +21,7 @@ class DialogWidget extends StatelessWidget {
         child:  Column(
           children:[
             TextField(
+              controller: controller,
               decoration: InputDecoration(
                 border: OutlineInputBorder(),
                 hintText:"Create a task"),

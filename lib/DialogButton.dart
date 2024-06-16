@@ -4,14 +4,14 @@ class DialogButton extends StatelessWidget {
   const DialogButton({
       super.key,
       required this.text,
-      this.onPressed,
+      required this.onPressed,
     });
     final String text;
     final Function()? onPressed;
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
-      onPressed: (){},
+      onPressed: onPressed,
       color: Theme.of(context).primaryColor,
       child:  Text(text)
     );
